@@ -1,16 +1,30 @@
-# Compiled class file
-*.class
+# Node modules & build output
+node_modules/
+dist/
+.nuxt/
+.output/
 
-# Log file
+# Local env files
+.env
+.env.*  # ví dụ .env.development, .env.production
+
+# Logs
 *.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-# BlueJ files
-*.ctxt
+# OS-specific files
+.DS_Store
+Thumbs.db
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+# IDE & editor config
+.vscode/
+.idea/
+*.swp
 
-# Package Files #
+# Java-related (nếu không dùng Java thì xóa phần này)
+*.class
 *.jar
 *.war
 *.nar
@@ -18,7 +32,14 @@
 *.zip
 *.tar.gz
 *.rar
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+.mtj.tmp/
+*.ctxt
+
+# Docker
+docker-compose.override.yml
+.docker/
+
+# Tailwind JIT cache (nếu dùng)
+.tailwind
