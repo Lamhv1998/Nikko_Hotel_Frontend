@@ -1,4 +1,60 @@
 {
-  // https://nuxt.com/docs/guide/concepts/typescript
-  "extends": "./.nuxt/tsconfig.json"
+  // Kế thừa cấu hình mặc định của Nuxt
+  "extends": "./.nuxt/tsconfig.json",
+  // Tùy chỉnh compilerOptions
+  "compilerOptions": {
+    // Đảm bảo TypeScript nghiêm ngặt hơn
+    "strict": true,
+    // Tắt verbatimModuleSyntax để tránh lỗi import type
+    "verbatimModuleSyntax": false,
+    // Tắt tùy chọn này nếu không cần import trực tiếp .ts (thường không cần trong Nuxt)
+    "allowImportingTsExtensions": false,
+    // Hỗ trợ các decorator (nếu cần)
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    // Đảm bảo tương thích với DOM và ESNext
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    // Đường dẫn alias để dễ import
+    "paths": {
+      "~/*": ["./*"],
+      "@/*": ["./*"],
+      "#app": ["./.nuxt/types/app.d.ts"],
+      "#imports": ["./.nuxt/imports.d.ts"]
+    },
+    // Tăng cường kiểm tra lỗi
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    // Đảm bảo tương thích với các module
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    // Đặt target để hỗ trợ ESNext
+    "target": "ESNext",
+    // Hỗ trợ Vue với JSX (nếu cần)
+    "jsx": "preserve",
+    // Loại bỏ "types" vì @nuxt/types không cần thiết trong Nuxt 3
+    // Thay vào đó, Nuxt 3 tự động sinh ra types trong .nuxt/
+    "types": ["vue", "node", "@pinia/nuxt"]
+  },
+  // Bao gồm các file cần TypeScript xử lý
+  "include": [
+    "src/**/*",
+    "stores/**/*",
+    "plugins/**/*",
+    "components/**/*",
+    "pages/**/*",
+    "layouts/**/*",
+    "*.ts",
+    "*.vue",
+    "types/**/*" // Thêm types/
+  ],
+  // Loại trừ các thư mục không cần xử lý
+  "exclude": [
+    "node_modules",
+    ".nuxt",
+    "dist"
+  ]
 }
