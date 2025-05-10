@@ -33,7 +33,7 @@
             <a href="#" class="inline-block mt-4 text-yellow-500 hover:underline">Xem chi tiết</a>
           </div>
           <div class="md:w-1/2 p-4">
-            <img src="/images/room.jpg" alt="Room" class="w-full h-64 object-cover rounded-lg" />
+            <img src="assets/images/room.jpg" alt="Room" class="w-full h-64 object-cover rounded-lg" />
           </div>
         </div>
 
@@ -48,7 +48,7 @@
             <a href="#" class="inline-block mt-4 text-yellow-500 hover:underline">Xem chi tiết</a>
           </div>
           <div class="md:w-1/2 p-4">
-            <img src="/images/beach.jpg" alt="Beach" class="w-full h-64 object-cover rounded-lg" />
+            <img src="assets/images/beach.jpg" alt="Beach" class="w-full h-64 object-cover rounded-lg" />
           </div>
         </div>
       </div>
