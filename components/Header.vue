@@ -3,7 +3,7 @@
       <div class="container mx-auto flex justify-between items-center">
         <!-- Logo -->
         <div class="text-2xl font-bold">
-          <img src="assets/images/logo.jpg" alt="Logo Hotel" class="h-10" />
+          <img src="~/assets/images/logo.jpg" alt="Logo Hotel" class="h-10" />
         </div>
         <!-- Navigation -->
         <nav class="flex space-x-6">
