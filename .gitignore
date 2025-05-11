@@ -6,7 +6,7 @@ dist/
 
 # Local env files
 .env
-.env.*  # ví dụ .env.development, .env.production
+# .env.*  # ví dụ .env.development, .env.production
 
 # Logs
 *.log
