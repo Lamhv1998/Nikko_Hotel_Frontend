@@ -52,9 +52,5 @@
     "types/**/*" // Thêm types/
   ],
   // Loại trừ các thư mục không cần xử lý
-  "exclude": [
-    "node_modules",
-    ".nuxt",
-    "dist"
-  ]
+  "exclude": ["node_modules", ".nuxt", "dist"]
 }
