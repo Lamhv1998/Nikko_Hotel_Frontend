@@ -43,3 +43,6 @@ docker-compose.override.yml
 
 # Tailwind JIT cache (nếu dùng)
 .tailwind
+
+# Pnpm files (nếu dùng pnpm)
+pnpm-lock.yaml
