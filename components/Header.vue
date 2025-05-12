@@ -7,9 +7,10 @@
         </div>
         <!-- Navigation -->
         <nav class="flex space-x-6">
-          <a href="#" class="text-gray-700 hover:text-blue-600">Trang Chủ</a>
-          <a href="#" class="text-gray-700 hover:text-blue-600">Phòng</a>
-          <a href="#" class="text-gray-700 hover:text-blue-600">Liên Hệ</a>
+          <NuxtLink  href="#" class="text-gray-700 hover:text-blue-600">Trang Chủ</NuxtLink>
+          <NuxtLink  href="#" class="text-gray-700 hover:text-blue-600">Phòng</NuxtLink>
+          <NuxtLink  href="#" class="text-gray-700 hover:text-blue-600">Liên Hệ</NuxtLink>
+          <NuxtLink  href="/register" class="text-gray-700 hover:text-blue-600">Đăng ký</NuxtLink>
           <button class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600">
             Đặt Phòng Ngay
           </button>
