@@ -24,7 +24,7 @@
       <!-- Dịch vụ nổi bật -->
       <section class="py-8 bg-white">
         <div class="container mx-auto px-4">
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
+          <div class="grid grid-cols-4 gap-3 text-center">
             <!-- Welcome Drinks -->
             <div class="flex flex-col items-center">
               <div class="bg-orange-100 rounded-full p-2 mb-2">
@@ -94,8 +94,8 @@
         </h2>
 
         <!-- Phòng Sang trọng -->
-        <div class="flex flex-col md:flex-row items-center mb-16">
-          <div class="md:w-1/2 p-4 text-left">
+        <div class="flex flex-row items-center mb-16">
+          <div class="w-1/2 p-4 text-left">
             <h3 class="text-3xl font-bold text-blue-900 mb-4 relative pl-6">
               <span class="absolute left-0 top-0 h-full w-1 bg-yellow-500"></span>
               Sang Trọng
@@ -108,14 +108,14 @@
               Khám phá
             </button>
           </div>
-          <div class="md:w-1/2 p-4">
+          <div class="w-1/2 p-4">
             <img src="/images/room.jpg" alt="Phòng sang trọng" class="w-full h-64 object-cover rounded-lg shadow-md" />
           </div>
         </div>
 
         <!-- Phòng Tiện nghi -->
-        <div class="flex flex-col md:flex-row items-center">
-          <div class="md:w-1/2 p-4 text-left">
+        <div class="flex flex-row items-center">
+          <div class="w-1/2 p-4 text-left">
             <h3 class="text-3xl font-bold text-blue-900 mb-4 relative pl-6">
               <span class="absolute left-0 top-0 h-full w-1 bg-yellow-500"></span>
               Tiện nghi
@@ -131,7 +131,7 @@
               Khám phá
             </button>
           </div>
-          <div class="md:w-1/2 p-4">
+          <div class="w-1/2 p-4">
             <img src="/images/beach.jpg" alt="Bãi biển tiện nghi"
               class="w-full h-64 object-cover rounded-lg shadow-md" />
           </div>
