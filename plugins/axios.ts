@@ -1,6 +1,6 @@
 import { defineNuxtPlugin } from "nuxt/app";
 import { useAuthStore } from "~/stores/auth";
-import axios, { type AxiosRequestConfig, type AxiosError } from "axios";
+import axios, {type AxiosError } from "axios";
 import { navigateTo } from "nuxt/app";
 import { useRuntimeConfig } from "nuxt/app";
 export default defineNuxtPlugin((nuxtApp) => {
@@ -20,7 +20,7 @@ export default defineNuxtPlugin((nuxtApp) => {
 
     // Thêm interceptor cho request
     axiosInstance.interceptors.request.use(
-      (config: AxiosRequestConfig) => {
+      (config: import('axios').InternalAxiosRequestConfig) => {
         const authStore = useAuthStore();
 
         if (authStore.token && typeof authStore.token === "string") {
