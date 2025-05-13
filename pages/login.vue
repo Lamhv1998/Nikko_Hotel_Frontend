@@ -1,5 +1,4 @@
 <template>
-  <Header></Header>
   <div class="flex h-screen">
     <!-- Left Section -->
     <div
@@ -111,10 +110,10 @@
       />
     </div>
   </div>
-  <Footer></Footer>
 </template>
 
 <script lang="ts" setup>
+import { ref } from "vue";
 const email = ref("");
 const password = ref("");
 
