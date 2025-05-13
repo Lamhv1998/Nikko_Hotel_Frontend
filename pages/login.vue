@@ -87,22 +87,27 @@
       <div class="mt-6 text-center">
         <p class="text-gray-600">Tiếp tục với</p>
         <div class="flex justify-center mt-2 space-x-4">
-          <button class="p-2 bg-blue-600 text-white rounded-full">
-            <i class="fab fa-facebook-f"></i>
+          <button
+            class="p-3 bg-blue-600 text-white rounded-full flex items-center justify-center"
+          >
+            <i class="mdi mdi-facebook text-white w-6 h-6"></i>
           </button>
-          <button class="p-2 bg-red-500 text-white rounded-full">
-            <i class="fab fa-google"></i>
+          <button
+            class="p-3 bg-red-500 text-white rounded-full flex items-center justify-center"
+          >
+            <i class="mdi mdi-google text-white w-6 h-6"></i>
           </button>
         </div>
       </div>
     </div>
 
     <!-- Right Section -->
-    <div class="w-1/2">
+    <div class="w-1/2 p-5">
       <img
         src="assets/images/logo.jpg"
         alt="Login Background"
         class="w-full h-full object-cover"
+        style="border-radius: 30px"
       />
     </div>
   </div>
