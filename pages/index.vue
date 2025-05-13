@@ -3,15 +3,18 @@
     <!-- Header -->
     <Header class="relative z-20" />
 
-    <!-- Banner with Overlay and Overlap Effect -->
+    <!-- Banner -->
     <section class="relative">
-      <img src="assets/images/banner.jpg" alt="Banner" class="w-full h-[500px] object-cover" />
-      <div class="absolute inset-0 bg-black bg-opacity-40 z-10"></div> <!-- Overlay -->
-      <div class="absolute inset-0 flex items-center justify-center text-center text-white z-20 -mt-20">
-        <div>
-          <h1 class="text-5xl font-bold mb-4">WELCOME TO TEAM DEV HOTELS</h1>
-          <p class="text-lg">Đạt chuẩn khách sạn 5 sao đẳng cấp với không gian nghỉ dưỡng tuyệt vời</p>
-        </div>
+      <img
+        src="assets/images/banner.jpg"
+        alt="Banner"
+        class="w-full h-[500px] object-cover"
+      />
+      <div>
+        <h1 class="text-5xl font-bold mb-4">WELCOME TO TEAM DEV HOTELS</h1>
+        <p class="text-lg">
+          Đạt chuẩn khách sạn 5 sao đẳng cấp với không gian nghỉ dưỡng tuyệt vời
+        </p>
       </div>
     </section>
 
@@ -25,15 +28,25 @@
         <!-- Room Section -->
         <div class="flex flex-col md:flex-row items-center mb-12">
           <div class="md:w-1/2 p-4">
-            <h3 class="text-2xl font-semibold text-blue-600 mb-4">SANG TRỌNG</h3>
+            <h3 class="text-2xl font-semibold text-blue-600 mb-4">
+              SANG TRỌNG
+            </h3>
             <p class="text-gray-700">
-              Tất cả các loại 16+ dịch vụ khách sạn bao gồm bar, phòng ngủ, nhà hàng, hồ bơi... 
-              Chúng tôi luôn sẵn sàng phục vụ bạn.
+              Tất cả các loại 16+ dịch vụ khách sạn bao gồm bar, phòng ngủ, nhà
+              hàng, hồ bơi... Chúng tôi luôn sẵn sàng phục vụ bạn.
             </p>
-            <a href="#" class="inline-block mt-4 text-yellow-500 hover:underline">Xem chi tiết</a>
+            <a
+              href="#"
+              class="inline-block mt-4 text-yellow-500 hover:underline"
+              >Xem chi tiết</a
+            >
           </div>
           <div class="md:w-1/2 p-4">
-            <img src="assets/images/room.jpg" alt="Room" class="w-full h-64 object-cover rounded-lg" />
+            <img
+              src="assets/images/room.jpg"
+              alt="Room"
+              class="w-full h-64 object-cover rounded-lg"
+            />
           </div>
         </div>
 
@@ -42,13 +55,21 @@
           <div class="md:w-1/2 p-4">
             <h3 class="text-2xl font-semibold text-blue-600 mb-4">TIỆN NGHI</h3>
             <p class="text-gray-700">
-              Tận hưởng không gian nghỉ dưỡng đẳng cấp với bãi biển riêng, spa thư giãn, gym hiện đại, 
-              hồ bơi vô cực và nhiều tiện ích khác.
+              Tận hưởng không gian nghỉ dưỡng đẳng cấp với bãi biển riêng, spa
+              thư giãn, gym hiện đại, hồ bơi vô cực và nhiều tiện ích khác.
             </p>
-            <a href="#" class="inline-block mt-4 text-yellow-500 hover:underline">Xem chi tiết</a>
+            <a
+              href="#"
+              class="inline-block mt-4 text-yellow-500 hover:underline"
+              >Xem chi tiết</a
+            >
           </div>
           <div class="md:w-1/2 p-4">
-            <img src="assets/images/beach.jpg" alt="Beach" class="w-full h-64 object-cover rounded-lg" />
+            <img
+              src="assets/images/beach.jpg"
+              alt="Beach"
+              class="w-full h-64 object-cover rounded-lg"
+            />
           </div>
         </div>
       </div>
@@ -68,14 +89,14 @@
 </template>
 
 <script>
-import Header from '~/components/Header.vue'
-import Footer from '~/components/Footer.vue'
+import Header from "~/components/Header.vue";
+import Footer from "~/components/Footer.vue";
 
 export default {
-  name: 'IndexPage',
+  name: "IndexPage",
   components: {
     Header,
-    Footer
-  }
-}
+    Footer,
+  },
+};
 </script>

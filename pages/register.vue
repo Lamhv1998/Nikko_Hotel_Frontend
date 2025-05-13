@@ -1,18 +1,16 @@
 <template>
   <div class="flex h-screen">
     <!-- Background Image -->
-    <div class="w-1/2">
+    <div class="w-1/2 flex justify-end items-center">
       <img
         src="/assets/images/logo.jpg"
         alt="Đăng ký"
-        class="w-full h-full object-cover"
+        class="h-[500px] w-auto object-contain rounded-xl"
       />
     </div>
 
     <!-- Form -->
-    <div
-      class="w-1/2 flex flex-col justify-center items-center bg-gray-50 px-16"
-    >
+    <div class="w-1/2 flex flex-col justify-center items-center px-16">
       <div class="mb-8">
         <img src="/assets/images/logo.jpg" alt="Logo Hotel" class="h-12 mb-4" />
         <h1 class="text-3xl font-bold mb-2">Đăng Ký</h1>
@@ -23,6 +21,9 @@
       <form @submit.prevent="handleRegister" class="w-full max-w-md">
         <!-- Email -->
         <div class="mb-4">
+          <p v-if="errors.email" class="text-red-500 text-sm mt-1">
+            {{ errors.email }}
+          </p>
           <label
             for="email"
             class="block text-sm font-medium text-gray-700 mb-2"
@@ -47,6 +48,10 @@
 
         <!-- Username -->
         <div class="mb-4">
+          <p v-if="errors.username" class="text-red-500 text-sm mt-1">
+            {{ errors.username }}
+          </p>
+
           <label for="text" class="block text-sm font-medium text-gray-700 mb-2"
             >Tên tài khoản</label
           >
@@ -69,6 +74,9 @@
 
         <!-- Password -->
         <div class="mb-4">
+          <p v-if="errors.password" class="text-red-500 text-sm mt-1">
+            {{ errors.password }}
+          </p>
           <label
             for="password"
             class="block text-sm font-medium text-gray-700 mb-2"
@@ -94,6 +102,9 @@
 
         <!-- Confirm Password -->
         <div class="mb-4">
+          <p v-if="errors.confirm_password" class="text-red-500 text-sm mt-1">
+            {{ errors.confirm_password }}
+          </p>
           <label
             for="confirm_password"
             class="block text-sm font-medium text-gray-700 mb-2"
@@ -127,12 +138,18 @@
           Đăng ký
         </button>
       </form>
+      <OtpModal
+        :visible="showModal"
+        @submit="handleOtpSubmit"
+        @close="showModal = false"
+      />
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { ref } from "vue";
+import { ref, reactive } from "vue";
+// import OtpModal from "@/components/modals/OtpModal.vue";
 
 const email = ref("");
 const username = ref("");
@@ -140,16 +157,59 @@ const password = ref("");
 const confirm_password = ref("");
 const showPassword = ref(false);
 const showConfirmPassword = ref(false);
-const errorMessage = ref("");
+const showModal = ref(false);
+
+const errors = ref({
+  email: "",
+  username: "",
+  password: "",
+  confirm_password: "",
+});
 
 function handleRegister() {
-  if (password.value !== confirm_password.value) {
-    errorMessage.value = "Mật khẩu không khớp. Vui lòng kiểm tra lại.";
-    return;
+  if (!validateFields()) return;
+
+  // call API
+  console.log("Đăng ký thành công với:", email.value, password.value);
+}
+
+function validateFields() {
+  let isValid = true;
+
+  // Reset lỗi
+  errors.value = {
+    email: "",
+    username: "",
+    password: "",
+    confirm_password: "",
+  };
+
+  if (!email.value || !email.value.includes("@")) {
+    errors.value.email = "Email không hợp lệ.";
+    isValid = false;
   }
 
-  errorMessage.value = "";
-  // Xử lý đăng ký (call API...)
-  console.log("Đăng ký thành công với:", email.value, password.value);
+  if (!username.value || username.value.length < 3) {
+    errors.value.username = "Tên tài khoản phải từ 3 ký tự.";
+    isValid = false;
+  }
+
+  if (!password.value || password.value.length < 6) {
+    errors.value.password = "Mật khẩu phải từ 6 ký tự.";
+    isValid = false;
+  }
+
+  if (password.value !== confirm_password.value) {
+    errors.value.confirm_password = "Mật khẩu không khớp.";
+    isValid = false;
+  }
+
+  return isValid;
+}
+
+function handleOtpSubmit(code: string) {
+  console.log("OTP nhập:", code);
+  // Gửi mã OTP đến backend
+  showModal.value = false;
 }
 </script>
